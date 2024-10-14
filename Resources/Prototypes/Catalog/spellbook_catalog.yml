@@ -1,4 +1,4 @@
-﻿# Offensive
+# Offensive
 - type: listing
   id: SpellbookFireball
   name: spellbook-fireball-name
@@ -20,6 +20,19 @@
   productAction: ActionPolymorphWizardRod
   cost:
     WizCoin: 3
+  categories:
+  - SpellbookOffensive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: SpellbookLightning
+  name: spellbook-lightning-name
+  description: spellbook-lightning-desc
+  productAction: ActionLightning
+  cost:
+    WizCoin: 2
   categories:
   - SpellbookOffensive
   conditions:

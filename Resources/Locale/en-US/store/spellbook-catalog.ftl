@@ -1,4 +1,4 @@
-﻿# Spells
+# Spells
 spellbook-fireball-name = Fireball
 spellbook-fireball-desc = Get most crew exploding with rage when they see this fireball heading toward them!
 
@@ -16,6 +16,9 @@ spellbook-polymorph-rod-desc = Change into an Immovable Rod with limited movemen
 
 spellbook-charge-name = Charge
 spellbook-charge-desc = Adds a charge back to your wand!
+
+spellbook-lightning-name = Lightning Bolt
+spellbook-lightning-desc = ZAP!
 
 # Equipment
 

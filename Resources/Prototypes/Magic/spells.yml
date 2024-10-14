@@ -1,0 +1,21 @@
+- type: entity
+  id: ActionLightning
+  name: Lightning Bolt
+  description: Zap!
+  components:
+  - type: Magic
+  - type: EntityTargetAction
+    useDelay: 15
+    range: 60
+    checkCanAccess: false
+    itemIconStyle: BigAction
+    canTargetSelf: false
+    interactOnMiss: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Effects/Lightning/lightningbolt.ogg
+    icon:
+      sprite: Effects/lightning.rsi
+      state: blue_lightning
+    event: !type:LightningSpellEvent
+      speech: action-speech-spell-lightning
+      lightningPrototype: ChargedLightning
