@@ -1,0 +1,20 @@
+- type: entity
+  id: ActionMindSwap
+  name: Mind Swap
+  description: Swaps your mind with the target.
+  components:
+  - type: EntityTargetAction
+    useDelay: 300
+    itemIconStyle: BigAction
+    whitelist:
+      components:
+      - MindContainer
+    canTargetSelf: false
+    interactOnMiss: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/staff_animation.ogg
+    icon:
+      sprite: Mobs/Species/Human/organs.rsi
+      state: brain
+    event: !type:MindSwapSpellEvent
+      speech: action-speech-spell-mindswap
