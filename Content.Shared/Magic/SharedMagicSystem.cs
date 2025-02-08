@@ -80,6 +80,7 @@ public abstract class SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<RandomGlobalSpawnSpellEvent>(OnRandomGlobalSpawnSpell);
         SubscribeLocalEvent<MindSwapSpellEvent>(OnMindSwapSpell);
         SubscribeLocalEvent<VoidApplauseSpellEvent>(OnVoidApplause);
+        SubscribeLocalEvent<FleshToStoneSpellEvent>(OnFleshToStoneSpell);
     }
 
     private void OnBeforeCastSpell(Entity<MagicComponent> ent, ref BeforeCastSpellEvent args)
@@ -512,6 +513,20 @@ public abstract class SharedMagicSystem : EntitySystem
 
         _stun.TryParalyze(ev.Target, ev.TargetStunDuration, true);
         _stun.TryParalyze(ev.Performer, ev.PerformerStunDuration, true);
+    }
+
+    #endregion
+    #region Flesh2Stone
+
+    private void OnFleshToStoneSpell(FleshToStoneSpellEvent ev)
+    {
+        if (ev.Handled || !PassesSpellPrerequisites(ev.Action, ev.Performer))
+            return;
+
+        ev.Handled = true;
+        Speak(ev);
+
+
     }
 
     #endregion
