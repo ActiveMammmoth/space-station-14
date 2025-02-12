@@ -35,6 +35,9 @@ spellbook-cluwne-desc = For when you really hate someone and Smite isn't enough.
 spellbook-slip-name = Slippery Slope
 spellbook-slip-desc = Learn the ancient ways of the Janitor and curse your target to be slippery. Requires Wizard Robe & Hat.
 
+spellbook-flesh-stone-name = Flesh to Stone
+spellbook-flesh-stone-desc = Few people know the truth of stone statues found across history, but now you do! Requires Wizard Robe & Hat.
+
 # Equipment
 
 spellbook-wand-polymorph-door-name = Wand of Entrance

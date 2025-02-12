@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: ActionSmite
   name: Smite
   description: Instantly gibs a target.
@@ -79,5 +79,28 @@
       - type: Slippery
       - type: StepTrigger
         requiredTriggeredSpeed: -1
+  - type: Magic
+    requiresClothes: true
+
+- type: entity
+  id: ActionFleshToStone
+  name: Flesh to Stone
+  description: Turn the flesh of a creature into stone!
+  components:
+  - type: EntityTargetAction
+    useDelay: 60
+    itemIconStyle: BigAction
+    whitelist:
+      components:
+      - Body
+    canTargetSelf: false
+    interactOnMiss: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/disintegrate.ogg
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: gib
+    event: !type:FleshToStoneSpellEvent
+      speech: action-speech-spell-flesh-stone
   - type: Magic
     requiresClothes: true

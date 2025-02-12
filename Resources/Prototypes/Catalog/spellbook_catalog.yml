@@ -65,6 +65,19 @@
   - !type:ListingLimitedStockCondition
     stock: 1
 
+- type: listing
+  id: SpellbookFleshToStone
+  name: spellbook-flesh-stone-name
+  description: spellbook-flesh-stone-desc
+  productAction: ActionFleshToStone
+  cost:
+    WizCoin: 3
+  categories:
+  - SpellbookOffensive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
 # Defensive
 - type: listing
   id: SpellbookForceWall
