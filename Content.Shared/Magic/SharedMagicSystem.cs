@@ -393,6 +393,17 @@ public abstract class SharedMagicSystem : EntitySystem
         _body.GibBody(ev.Target, true, body);
     }
 
+    private void OnFleshToStoneSpell(FleshToStoneSpellEvent ev)
+    {
+        if (ev.Handled || !PassesSpellPrerequisites(ev.Action, ev.Performer))
+            return;
+
+        ev.Handled = true;
+        Speak(ev);
+
+        EnsureComp<PetrifiedComponent>(ev.Target);
+    }
+
     // End Touch Spells
     #endregion
     #region Knock Spells
@@ -513,20 +524,6 @@ public abstract class SharedMagicSystem : EntitySystem
 
         _stun.TryParalyze(ev.Target, ev.TargetStunDuration, true);
         _stun.TryParalyze(ev.Performer, ev.PerformerStunDuration, true);
-    }
-
-    #endregion
-    #region Flesh2Stone
-
-    private void OnFleshToStoneSpell(FleshToStoneSpellEvent ev)
-    {
-        if (ev.Handled || !PassesSpellPrerequisites(ev.Action, ev.Performer))
-            return;
-
-        ev.Handled = true;
-        Speak(ev);
-
-
     }
 
     #endregion

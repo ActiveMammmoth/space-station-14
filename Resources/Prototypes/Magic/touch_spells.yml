@@ -85,7 +85,7 @@
 - type: entity
   id: ActionFleshToStone
   name: Flesh to Stone
-  description: Turn the flesh of a creature into stone!
+  description: Create a beautiful stone sculpture with just one touch!
   components:
   - type: EntityTargetAction
     useDelay: 60
