@@ -85,6 +85,7 @@ public abstract class SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<MindSwapSpellEvent>(OnMindSwapSpell);
         SubscribeLocalEvent<VoidApplauseSpellEvent>(OnVoidApplause);
         SubscribeLocalEvent<AnimateSpellEvent>(OnAnimateSpell);
+        SubscribeLocalEvent<PetrifySpellEvent>(OnPetrifySpell);
     }
 
     private void OnBeforeCastSpell(Entity<MagicComponent> ent, ref BeforeCastSpellEvent args)
@@ -404,6 +405,15 @@ public abstract class SharedMagicSystem : EntitySystem
             return;
 
         _body.GibBody(ev.Target, true, body);
+    }
+
+    private void OnPetrifySpell(PetrifySpellEvent ev)
+    {
+        if (ev.Handled || !PassesSpellPrerequisites(ev.Action, ev.Performer))
+            return;
+
+        ev.Handled = true;
+        Speak(ev);
     }
 
     // End Touch Spells

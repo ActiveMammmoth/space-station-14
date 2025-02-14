@@ -67,4 +67,5 @@
       - type: CanEscapeInventory
       removeComponents:
       - RequireProjectileTarget
+      - BlockMovement
       speech: action-speech-spell-animate
