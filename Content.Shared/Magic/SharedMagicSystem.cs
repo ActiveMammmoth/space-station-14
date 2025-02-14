@@ -13,6 +13,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Lock;
 using Content.Shared.Magic.Components;
 using Content.Shared.Magic.Events;
+using Content.Shared.Magic.Systems;
 using Content.Shared.Maps;
 using Content.Shared.Mind;
 using Content.Shared.Physics;
@@ -67,6 +68,7 @@ public abstract class SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
+    [Dependency] private readonly PetrificationSystem _petrify = default!;
 
     public override void Initialize()
     {
@@ -414,6 +416,8 @@ public abstract class SharedMagicSystem : EntitySystem
 
         ev.Handled = true;
         Speak(ev);
+
+        _petrify.TryPetrify(ev.Target);
     }
 
     // End Touch Spells
