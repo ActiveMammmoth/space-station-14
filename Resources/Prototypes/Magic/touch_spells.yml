@@ -99,7 +99,7 @@
       path: /Audio/Effects/break_stone.ogg
     icon:
       sprite: Objects/Magic/magicactions.rsi
-      state: spell_default
+      state: petrify
     event: !type:PetrifySpellEvent
       speech: action-speech-spell-petrify
   - type: Magic
