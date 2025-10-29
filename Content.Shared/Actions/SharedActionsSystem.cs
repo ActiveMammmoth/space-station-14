@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Threading.Tasks;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions.Components;
 using Content.Shared.Actions.Events;
@@ -535,6 +536,23 @@ public abstract partial class SharedActionsSystem : EntitySystem
             // only set Entity if the action also has EntityTargetAction
             ev.Entity = HasComp<EntityTargetActionComponent>(ent) ? args.Target : null;
             args.Handled = true;
+        }
+    }
+
+    /// <summary>
+    /// Performs multiple actions bypassing validation checks
+    /// </summary>
+    /// <param name="performer">The entity performing the action</param>
+    /// <param name="actions">The list of actions to be performed</param>
+    /// <param name="between">List of timespans to wait between each action in milliseconds</param>
+    public void PerformMultipleActions(Entity<ActionsComponent?> performer, List<Entity<ActionComponent>> actions, List<TimeSpan> between)
+    {
+        var i = 0;
+        foreach (var action in actions)
+        {
+            PerformAction(performer, action);
+            Task.Delay(between[i].Milliseconds); // Wait for specified time between each performed action
+            i++;
         }
     }
 
