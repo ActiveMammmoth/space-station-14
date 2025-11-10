@@ -34,6 +34,12 @@ public sealed partial class XenoArtifactNodeComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? Attached;
 
+    /// <summary>
+    /// Base amount of tension added to artifact when activated.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public int Tension = 50;
+
     #region Durability
     /// <summary>
     /// Marker, is durability of node degraded or not.

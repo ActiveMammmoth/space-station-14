@@ -98,6 +98,7 @@ public abstract partial class SharedXenoArtifactSystem
         RemComp(ent, unlockingComponent);
         RaiseUnlockingFinished(ent, node);
         artifactComponent.NextUnlockTime = _timing.CurTime + artifactComponent.UnlockStateRefractory;
+        AddTension((ent.Owner, ent.Comp2), 50);
     }
 
     public void CancelUnlockingState(Entity<XenoArtifactUnlockingComponent, XenoArtifactComponent> ent)

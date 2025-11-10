@@ -62,4 +62,26 @@ public abstract partial class SharedXenoArtifactSystem : EntitySystem
         ent.Comp.Suppressed = val;
         Dirty(ent);
     }
+
+    private void AddTension(Entity<XenoArtifactComponent> ent, int val)
+    {
+        Log.Debug("Tension added");
+
+        if (ent.Comp.Tension + val >= 100)
+        {
+            TensionRelease(ent);
+            return;
+        }
+
+        ent.Comp.Tension += val;
+        Dirty(ent);
+    }
+
+    private void TensionRelease(Entity<XenoArtifactComponent> ent)
+    {
+        Log.Debug("Tension released");
+
+        ent.Comp.Tension = 0;
+        Dirty(ent);
+    }
 }

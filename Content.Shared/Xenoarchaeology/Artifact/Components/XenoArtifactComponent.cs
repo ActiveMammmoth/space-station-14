@@ -53,6 +53,12 @@ public sealed partial class XenoArtifactComponent : Component
     public bool Suppressed;
 
     /// <summary>
+    /// Current tension value of the artifact
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public int Tension;
+
+    /// <summary>
     /// A multiplier applied to the calculated point value
     /// to determine the monetary value of the artifact.
     /// </summary>
