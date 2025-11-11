@@ -17,7 +17,7 @@
                 </BoxContainer>
             </PanelContainer>
             <PanelContainer Name="TensionPanel" HorizontalAlignment="Center">
-                <RichTextLabel Name="TensionLabel" HorizontalAlignment="Center" HorizontalExpand="True" Text="{Loc 'analysis-console-tension'}"/>
+                <RichTextLabel Name="TensionLabel" HorizontalExpand="True" Text="{Loc 'analysis-console-tension'}"/>
                 <RichTextLabel Name="TensionValueLabel" HorizontalAlignment="Right"/>
             </PanelContainer>
             <customControls:HSeparator StyleClasses="HighDivider" Margin="0 15 0 10"/>

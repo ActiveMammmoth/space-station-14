@@ -37,7 +37,6 @@ public sealed partial class AnalysisConsoleMenu : FancyWindow
 
     private TimeSpan? _hideExtractInfoIn;
     private int _extractionSum;
-    private int _tension;
 
     public event Action? OnServerSelectionButtonPressed;
     public event Action? OnExtractButtonPressed;
@@ -151,11 +150,14 @@ public sealed partial class AnalysisConsoleMenu : FancyWindow
         {
             NoneSelectedLabel.Visible = false;
             TensionLabel.Visible = false;
+            TensionValueLabel.Visible = false;
         }
 
         if (arti != null)
         {
             TensionLabel.Visible = true;
+            TensionValueLabel.Visible = true;
+            TensionValueLabel.Text = Loc.GetString("analysis-console-tension-value", ("value", arti.Value.Comp.Tension));
         }
 
         NoArtiLabel.Visible = true;

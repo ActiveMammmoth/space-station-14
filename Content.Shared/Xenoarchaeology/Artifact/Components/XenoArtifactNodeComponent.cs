@@ -38,7 +38,7 @@ public sealed partial class XenoArtifactNodeComponent : Component
     /// Base amount of tension added to artifact when activated.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int Tension = 50;
+    public int Tension = 10;
 
     #region Durability
     /// <summary>

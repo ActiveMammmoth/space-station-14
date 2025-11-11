@@ -37,7 +37,7 @@ analysis-console-extract-value = [font="Monospace" size=11][color=orange]Node {$
 analysis-console-extract-none = [font="Monospace" size=11][color=orange] No unlocked nodes have any points left to extract [/color][/font]
 analysis-console-extract-sum = [font="Monospace" size=11][color=orange]Total Research: {$value}[/color][/font]
 
-analysis-console-tension = [font="Monospace" size=11][color=orange]Tension:[/color][/font]
+analysis-console-tension = [font="Monospace" size=11][color=orange]Tension:   [/color][/font]
 analysis-console-tension-value = [font="Monospace" size=11][color=orange]{$value}[/color][/font]
 
 analyzer-artifact-extract-popup = Energy shimmers on the artifact's surface!
