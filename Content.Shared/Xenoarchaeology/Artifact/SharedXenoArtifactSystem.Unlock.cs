@@ -82,7 +82,6 @@ public abstract partial class SharedXenoArtifactSystem
             // var activated = ActivateNode((ent, artifactComponent), node.Value, null, null, Transform(ent).Coordinates, false);
             // if (activated)
             soundEffect = unlockingComponent.UnlockActivationSuccessfulSound;
-            AddTension((ent.Owner, artifactComponent), node.Value.Comp.Tension);
         }
         else
         {
@@ -99,6 +98,10 @@ public abstract partial class SharedXenoArtifactSystem
         RemComp(ent, unlockingComponent);
         RaiseUnlockingFinished(ent, node);
         artifactComponent.NextUnlockTime = _timing.CurTime + artifactComponent.UnlockStateRefractory;
+        if (node != null)
+        {
+            AddTension((ent.Owner, artifactComponent), node.Value.Comp.Tension);
+        }
     }
 
     public void CancelUnlockingState(Entity<XenoArtifactUnlockingComponent, XenoArtifactComponent> ent)

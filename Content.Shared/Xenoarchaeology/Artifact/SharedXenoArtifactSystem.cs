@@ -67,13 +67,14 @@ public abstract partial class SharedXenoArtifactSystem : EntitySystem
     {
         Log.Debug("Tension added");
 
-        if (ent.Comp.Tension + val >= 100)
+        ent.Comp.Tension += val;
+
+        if (ent.Comp.Tension + RobustRandom.Next(0, 100) >= 100)
         {
             TensionRelease(ent);
             return;
         }
 
-        ent.Comp.Tension += val;
         Dirty(ent);
     }
 

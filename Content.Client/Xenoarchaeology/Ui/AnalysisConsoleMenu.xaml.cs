@@ -37,6 +37,7 @@ public sealed partial class AnalysisConsoleMenu : FancyWindow
 
     private TimeSpan? _hideExtractInfoIn;
     private int _extractionSum;
+    private int _tension;
 
     public event Action? OnServerSelectionButtonPressed;
     public event Action? OnExtractButtonPressed;
@@ -147,7 +148,15 @@ public sealed partial class AnalysisConsoleMenu : FancyWindow
         ExtractButton.Disabled = arti == null;
 
         if (arti == null)
+        {
             NoneSelectedLabel.Visible = false;
+            TensionLabel.Visible = false;
+        }
+
+        if (arti != null)
+        {
+            TensionLabel.Visible = true;
+        }
 
         NoArtiLabel.Visible = true;
         if (!_artifactAnalyzer.TryGetAnalyzer(ent, out _))
