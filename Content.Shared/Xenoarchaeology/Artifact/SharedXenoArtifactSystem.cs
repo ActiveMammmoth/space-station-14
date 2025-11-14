@@ -1,5 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.Popups;
+using Content.Shared.Trigger;
 using Content.Shared.Xenoarchaeology.Artifact.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
@@ -81,6 +82,9 @@ public abstract partial class SharedXenoArtifactSystem : EntitySystem
     private void TensionRelease(Entity<XenoArtifactComponent> ent)
     {
         Log.Debug("Tension released");
+
+        var ev = new TriggerEvent(ent, "TensionRandom");
+        RaiseLocalEvent(ent, ref ev);
 
         ent.Comp.Tension = 0;
         Dirty(ent);

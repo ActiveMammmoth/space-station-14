@@ -49,6 +49,23 @@
       Flammable: [Touch]
       Extinguish: [Touch]
       Acidic: [Touch]
+  # Tension
+  - type: RandomTriggerOnTrigger
+    randomKeyOut: TensionEffects
+    keysIn:
+    - TensionRandom
+  - type: ExplosionOnTrigger
+    keysIn:
+    - TensionExplode
+  - type: EmpOnTrigger
+    keysIn:
+    - TensionEMP
+
+- type: weightedRandom
+  id: TensionEffects
+  weights:
+    TensionExplode: 1
+    TensionEMP: 1
 
 - type: entity
   parent: BaseAction
