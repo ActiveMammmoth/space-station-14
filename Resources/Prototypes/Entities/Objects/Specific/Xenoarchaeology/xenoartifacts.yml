@@ -58,6 +58,7 @@
     keysIn:
     - TensionExplode
   - type: EmpOnTrigger
+    range: 10.0
     keysIn:
     - TensionEMP
 

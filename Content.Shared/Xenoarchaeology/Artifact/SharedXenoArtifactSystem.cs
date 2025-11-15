@@ -83,7 +83,7 @@ public abstract partial class SharedXenoArtifactSystem : EntitySystem
     {
         Log.Debug("Tension released");
 
-        var ev = new TriggerEvent(ent, "TensionRandom");
+        var ev = new TriggerEvent(Key: "TensionRandom");
         RaiseLocalEvent(ent, ref ev);
 
         ent.Comp.Tension = 0;
